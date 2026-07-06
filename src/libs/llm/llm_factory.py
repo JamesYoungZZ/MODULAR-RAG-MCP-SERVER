@@ -47,6 +47,7 @@ class LLMFactory:
     def create_vision_llm(cls, settings: Settings) -> BaseVisionLLM:
         if settings.vision_llm is None:
             raise ValueError("Vision LLM settings are not configured")
+        _register_builtin_vision_providers(cls)
         provider_key = _normalize_provider(settings.vision_llm.provider)
         if provider_key not in cls._vision_providers:
             available = ", ".join(sorted(cls._vision_providers)) or "none"
@@ -72,6 +73,16 @@ def _register_builtin_providers(factory: type[LLMFactory]) -> None:
     }
     for provider, builder in builtin_providers.items():
         factory._providers.setdefault(provider, builder)
+
+
+def _register_builtin_vision_providers(factory: type[LLMFactory]) -> None:
+    from libs.llm.azure_vision_llm import AzureVisionLLM
+
+    builtin_providers: dict[str, VisionProviderBuilder] = {
+        "azure": AzureVisionLLM,
+    }
+    for provider, builder in builtin_providers.items():
+        factory._vision_providers.setdefault(provider, builder)
 
 
 __all__ = ["LLMFactory", "ProviderBuilder", "VisionProviderBuilder"]
