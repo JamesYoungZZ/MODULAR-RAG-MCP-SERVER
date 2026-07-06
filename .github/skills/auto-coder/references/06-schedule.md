@@ -54,7 +54,7 @@
 | B3 | Splitter 抽象接口与工厂 | [x] | 2026-07-06 | BaseSplitter、SplitterFactory、splitter 配置与 Fake 策略路由测试已完成 |
 | B4 | VectorStore 抽象接口与工厂 | [x] | 2026-07-06 | BaseVectorStore、VectorStoreFactory 与 Fake 存储契约测试已完成 |
 | B5 | Reranker 抽象接口与工厂（含 None 回退） | [x] | 2026-07-06 | BaseReranker、NoneReranker、RerankerFactory 与回退路由测试已完成 |
-| B6 | Evaluator 抽象接口与工厂 | [ ] | | |
+| B6 | Evaluator 抽象接口与工厂 | [x] | 2026-07-06 | BaseEvaluator、EvaluatorFactory、CustomEvaluator(hit_rate/mrr) 与单元测试已完成 |
 | B7.1 | OpenAI-Compatible LLM 实现 | [ ] | | |
 | B7.2 | Ollama LLM 实现 | [ ] | | |
 | B7.3 | OpenAI & Azure Embedding 实现 | [ ] | | |
@@ -157,7 +157,7 @@
 | 阶段 | 总任务数 | 已完成 | 进度 |
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
-| 阶段 B | 16 | 5 | 31% |
+| 阶段 B | 16 | 6 | 38% |
 | 阶段 C | 15 | 0 | 0% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
@@ -165,7 +165,7 @@
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **8** | **12%** |
+| **总计** | **68** | **9** | **13%** |
 
 
 ---
