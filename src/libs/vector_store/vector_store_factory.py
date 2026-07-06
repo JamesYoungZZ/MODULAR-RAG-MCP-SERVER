@@ -26,6 +26,7 @@ class VectorStoreFactory:
 
     @classmethod
     def create(cls, settings: Settings) -> BaseVectorStore:
+        _register_builtin_backends(cls)
         backend_key = _normalize_backend(settings.vector_store.backend)
         if backend_key not in cls._backends:
             available = ", ".join(sorted(cls._backends)) or "none"
@@ -37,6 +38,16 @@ class VectorStoreFactory:
 
 def _normalize_backend(backend: str) -> str:
     return backend.strip().lower()
+
+
+def _register_builtin_backends(factory: type[VectorStoreFactory]) -> None:
+    from libs.vector_store.chroma_store import ChromaStore
+
+    builtin_backends: dict[str, VectorStoreBuilder] = {
+        "chroma": ChromaStore,
+    }
+    for backend, builder in builtin_backends.items():
+        factory._backends.setdefault(backend, builder)
 
 
 __all__ = ["VectorStoreBuilder", "VectorStoreFactory"]
