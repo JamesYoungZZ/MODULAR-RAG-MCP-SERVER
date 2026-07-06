@@ -9,6 +9,7 @@ description = "A modular RAG MCP server skeleton."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+	"langchain-text-splitters>=0.3",
 	"PyYAML>=6.0",
 ]
 

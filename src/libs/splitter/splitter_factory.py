@@ -26,6 +26,7 @@ class SplitterFactory:
 
     @classmethod
     def create(cls, settings: Settings) -> BaseSplitter:
+        _register_builtin_strategies(cls)
         strategy_key = _normalize_strategy(settings.splitter.strategy)
         if strategy_key not in cls._strategies:
             available = ", ".join(sorted(cls._strategies)) or "none"
@@ -37,6 +38,16 @@ class SplitterFactory:
 
 def _normalize_strategy(strategy: str) -> str:
     return strategy.strip().lower()
+
+
+def _register_builtin_strategies(factory: type[SplitterFactory]) -> None:
+    from libs.splitter.recursive_splitter import RecursiveSplitter
+
+    builtin_strategies: dict[str, SplitterBuilder] = {
+        "recursive": RecursiveSplitter,
+    }
+    for strategy, builder in builtin_strategies.items():
+        factory._strategies.setdefault(strategy, builder)
 
 
 __all__ = ["SplitterBuilder", "SplitterFactory"]
