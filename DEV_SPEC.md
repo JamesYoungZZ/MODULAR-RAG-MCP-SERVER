@@ -1971,7 +1971,7 @@ dashboard:
 | B7.4 | Ollama Embedding 实现 | [x] | 2026-07-06 | Ollama /api/embed 批量向量化、默认 base_url、输入校验、错误处理与 mock HTTP 测试已完成 |
 | B7.5 | Recursive Splitter 默认实现 | [x] | 2026-07-06 | LangChain RecursiveCharacterTextSplitter 封装、默认 recursive 路由、Markdown 边界测试已完成 |
 | B7.6 | ChromaStore 默认实现 | [x] | 2026-07-06 | Chroma PersistentClient 默认后端、upsert/query、top_k、metadata filters 与临时目录 roundtrip 测试已完成 |
-| B7.7 | LLM Reranker 实现 | [ ] | | |
+| B7.7 | LLM Reranker 实现 | [x] | 2026-07-06 | LLMReranker、rerank prompt 读取、严格 ranked_ids JSON 校验、fallback error 与 mock LLM 测试已完成 |
 | B7.8 | Cross-Encoder Reranker 实现 | [ ] | | |
 | B8 | Vision LLM 抽象接口与工厂集成 | [ ] | | |
 | B9 | Azure Vision LLM 实现 | [ ] | | |
@@ -2067,7 +2067,7 @@ dashboard:
 | 阶段 | 总任务数 | 已完成 | 进度 |
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
-| 阶段 B | 16 | 12 | 75% |
+| 阶段 B | 16 | 13 | 81% |
 | 阶段 C | 15 | 0 | 0% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
@@ -2075,7 +2075,7 @@ dashboard:
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **15** | **22%** |
+| **总计** | **68** | **16** | **24%** |
 
 
 ---

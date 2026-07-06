@@ -26,6 +26,7 @@ class RerankerFactory:
 
     @classmethod
     def create(cls, settings: Settings) -> BaseReranker:
+        _register_builtin_backends(cls)
         backend_key = _normalize_backend(settings.rerank.backend)
         if backend_key not in cls._backends:
             available = ", ".join(sorted(cls._backends)) or "none"
@@ -35,6 +36,16 @@ class RerankerFactory:
 
 def _normalize_backend(backend: str) -> str:
     return backend.strip().lower()
+
+
+def _register_builtin_backends(factory: type[RerankerFactory]) -> None:
+    from libs.reranker.llm_reranker import LLMReranker
+
+    builtin_backends: dict[str, RerankerBuilder] = {
+        "llm": LLMReranker,
+    }
+    for backend, builder in builtin_backends.items():
+        factory._backends.setdefault(backend, builder)
 
 
 __all__ = ["RerankerBuilder", "RerankerFactory"]
