@@ -80,7 +80,7 @@
 | C8 | DenseEncoder | [x] | 2026-07-06 | DenseEncoder、BaseEmbedding 批量调用、ChunkRecord dense_vector 输出与维度校验测试已完成 |
 | C9 | SparseEncoder | [x] | 2026-07-06 | SparseEncoder、BM25-ready term frequency sparse_vector、空文本行为与单元测试已完成 |
 | C10 | BatchProcessor | [x] | 2026-07-06 | BatchProcessor、dense/sparse 批处理编排、批次耗时记录与顺序稳定测试已完成 |
-| C11 | BM25Indexer（倒排索引+IDF计算） | [ ] | | |
+| C11 | BM25Indexer（倒排索引+IDF计算） | [x] | 2026-07-06 | BM25Indexer 倒排索引、IDF 计算、JSON 持久化、load/query/upsert 与 roundtrip 测试已完成 |
 | C12 | VectorUpserter（幂等upsert） | [ ] | | |
 | C13 | ImageStorage（图片存储+SQLite索引） | [ ] | | |
 | C14 | Pipeline 编排（MVP 串起来） | [ ] | | |
@@ -158,14 +158,14 @@
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
 | 阶段 B | 16 | 16 | 100% |
-| 阶段 C | 15 | 10 | 67% |
+| 阶段 C | 15 | 11 | 73% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
 | 阶段 F | 5 | 0 | 0% |
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **29** | **43%** |
+| **总计** | **68** | **30** | **44%** |
 
 
 ---
