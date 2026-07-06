@@ -42,10 +42,12 @@ def _normalize_provider(provider: str) -> str:
 
 def _register_builtin_providers(factory: type[EmbeddingFactory]) -> None:
     from libs.embedding.openai_embedding import AzureOpenAIEmbedding, OpenAIEmbedding
+    from libs.embedding.ollama_embedding import OllamaEmbedding
 
     builtin_providers: dict[str, ProviderBuilder] = {
         "openai": OpenAIEmbedding,
         "azure": AzureOpenAIEmbedding,
+        "ollama": OllamaEmbedding,
     }
     for provider, builder in builtin_providers.items():
         factory._providers.setdefault(provider, builder)
