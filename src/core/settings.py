@@ -28,6 +28,7 @@ class ProviderModelSettings:
     temperature: float | None = None
     max_tokens: int | None = None
     dimensions: int | None = None
+    max_image_size: int | None = None
 
 
 @dataclass(frozen=True)
@@ -189,6 +190,7 @@ def _provider_model_settings(raw_data: dict[str, Any], section: str) -> Provider
         temperature=_optional_float(raw_data, f"{section}.temperature"),
         max_tokens=_optional_int(raw_data, f"{section}.max_tokens"),
         dimensions=_optional_int(raw_data, f"{section}.dimensions"),
+        max_image_size=_optional_int(raw_data, f"{section}.max_image_size"),
     )
 
 
