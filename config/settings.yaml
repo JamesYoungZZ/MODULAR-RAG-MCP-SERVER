@@ -1,0 +1,43 @@
+# Minimal parseable configuration for the project skeleton.
+llm:
+  provider: placeholder
+  model: placeholder
+
+embedding:
+  provider: placeholder
+  model: placeholder
+
+vision_llm:
+  provider: placeholder
+  model: placeholder
+
+vector_store:
+  backend: chroma
+  persist_path: ./data/db/chroma
+
+retrieval:
+  sparse_backend: bm25
+  fusion_algorithm: rrf
+  top_k_dense: 20
+  top_k_sparse: 20
+  top_k_final: 10
+
+rerank:
+  backend: none
+  model: placeholder
+  top_m: 30
+
+evaluation:
+  backends: []
+  golden_test_set: ./tests/fixtures/golden_test_set.json
+
+observability:
+  enabled: true
+  log_file: ./logs/traces.jsonl
+
+dashboard:
+  enabled: true
+  port: 8501
+  traces_dir: ./logs
+  auto_refresh: true
+  refresh_interval: 5
