@@ -7,6 +7,7 @@ from core.settings import (
     RerankSettings,
     RetrievalSettings,
     Settings,
+    SplitterSettings,
     VectorStoreSettings,
 )
 from libs.embedding import BaseEmbedding, EmbeddingFactory
@@ -56,6 +57,7 @@ def _settings_with_embedding(provider: str, model: str | None = None) -> Setting
     return Settings(
         llm=ProviderModelSettings(provider="placeholder", model="placeholder"),
         embedding=ProviderModelSettings(provider=provider, model=model),
+        splitter=SplitterSettings(strategy="recursive", chunk_size=1000, chunk_overlap=200),
         vector_store=VectorStoreSettings(backend="chroma", persist_path="./data/db/chroma"),
         retrieval=RetrievalSettings(
             sparse_backend="bm25",

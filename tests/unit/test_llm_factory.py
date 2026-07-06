@@ -9,6 +9,7 @@ from core.settings import (
     RerankSettings,
     RetrievalSettings,
     Settings,
+    SplitterSettings,
     VectorStoreSettings,
 )
 from libs.llm import BaseLLM, LLMFactory
@@ -58,6 +59,7 @@ def _settings_with_llm(provider: str, model: str | None = None) -> Settings:
     return Settings(
         llm=ProviderModelSettings(provider=provider, model=model),
         embedding=ProviderModelSettings(provider="placeholder", model="placeholder"),
+        splitter=SplitterSettings(strategy="recursive", chunk_size=1000, chunk_overlap=200),
         vector_store=VectorStoreSettings(backend="chroma", persist_path="./data/db/chroma"),
         retrieval=RetrievalSettings(
             sparse_backend="bm25",

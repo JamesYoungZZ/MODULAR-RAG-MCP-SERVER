@@ -29,6 +29,13 @@ class VectorStoreSettings:
 
 
 @dataclass(frozen=True)
+class SplitterSettings:
+    strategy: str
+    chunk_size: int
+    chunk_overlap: int
+
+
+@dataclass(frozen=True)
 class RetrievalSettings:
     sparse_backend: str
     fusion_algorithm: str
@@ -69,6 +76,7 @@ class DashboardSettings:
 class Settings:
     llm: ProviderModelSettings
     embedding: ProviderModelSettings
+    splitter: SplitterSettings
     vector_store: VectorStoreSettings
     retrieval: RetrievalSettings
     rerank: RerankSettings
@@ -101,6 +109,9 @@ def validate_settings(settings: Settings) -> None:
     required_values: dict[str, Any] = {
         "llm.provider": settings.llm.provider,
         "embedding.provider": settings.embedding.provider,
+        "splitter.strategy": settings.splitter.strategy,
+        "splitter.chunk_size": settings.splitter.chunk_size,
+        "splitter.chunk_overlap": settings.splitter.chunk_overlap,
         "vector_store.backend": settings.vector_store.backend,
         "vector_store.persist_path": settings.vector_store.persist_path,
         "retrieval.sparse_backend": settings.retrieval.sparse_backend,
@@ -125,6 +136,11 @@ def _settings_from_mapping(raw_data: dict[str, Any]) -> Settings:
         llm=_provider_model_settings(raw_data, "llm"),
         embedding=_provider_model_settings(raw_data, "embedding"),
         vision_llm=_optional_provider_model_settings(raw_data, "vision_llm"),
+        splitter=SplitterSettings(
+            strategy=_required_value(raw_data, "splitter.strategy"),
+            chunk_size=_required_int(raw_data, "splitter.chunk_size"),
+            chunk_overlap=_required_int(raw_data, "splitter.chunk_overlap"),
+        ),
         vector_store=VectorStoreSettings(
             backend=_required_value(raw_data, "vector_store.backend"),
             persist_path=_required_value(raw_data, "vector_store.persist_path"),

@@ -14,6 +14,11 @@ embedding:
   provider: placeholder
   model: placeholder
 
+splitter:
+  strategy: recursive
+  chunk_size: 1000
+  chunk_overlap: 200
+
 vector_store:
   backend: chroma
   persist_path: ./data/db/chroma
@@ -48,6 +53,9 @@ def test_load_settings_returns_typed_settings(tmp_path: Path) -> None:
 
     assert settings.llm.provider == "placeholder"
     assert settings.embedding.provider == "placeholder"
+    assert settings.splitter.strategy == "recursive"
+    assert settings.splitter.chunk_size == 1000
+    assert settings.splitter.chunk_overlap == 200
     assert settings.vector_store.backend == "chroma"
     assert settings.retrieval.top_k_final == 10
     assert settings.rerank.backend == "none"
@@ -57,7 +65,7 @@ def test_load_settings_returns_typed_settings(tmp_path: Path) -> None:
 def test_load_settings_reports_missing_required_field(tmp_path: Path) -> None:
     settings_path = tmp_path / "settings.yaml"
     settings_path.write_text(
-        VALID_SETTINGS.replace("  provider: placeholder\n  model: placeholder\n\nvector_store:", "  model: placeholder\n\nvector_store:"),
+      VALID_SETTINGS.replace("embedding:\n  provider: placeholder\n", "embedding:\n"),
         encoding="utf-8",
     )
 
