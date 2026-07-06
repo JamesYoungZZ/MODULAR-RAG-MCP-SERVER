@@ -117,17 +117,19 @@ Round 3 still failing → STOP, show failure report to user
     - Keep it interview-ready: clear, concrete, and focused on engineering decisions rather than task-by-task changelog detail.
 4. **Show summary & ask**:
 
-Before asking for the commit choice, include three concise sections:
+Before asking for the commit choice, include four sections:
 - **Technical summary**: describe the implementation in engineering terms, including the main abstractions, modules, contracts, tests, and validation results.
-- **Plain-language summary**: explain what changed in non-technical language suitable for a product or learning discussion.
+- **Plain-language study summary**: write a beginner-friendly explanation in 2-4 short paragraphs. Explain what was coded, why each touched file matters, how the new code fits into the project flow, and any important vocabulary a beginner should learn. Avoid assuming the user already knows architecture terms; briefly unpack terms such as contract, factory, metadata, pipeline, vector, or serialization when they appear.
 - **Benefit**: explain what practical value the change adds now and what it enables for future tasks.
+- **Study pointers**: list 3-5 concrete files, functions, or concepts the user can review next to understand the change more deeply.
 
 ```
 ✅ [A3] 配置加载与校验 — done
    Files: src/core/settings.py, tests/unit/test_settings.py
    Tests: 8/8 passed
    Technical summary: Added typed settings models, YAML loading, validation, and unit coverage.
-   Plain-language summary: The app can now read and check its configuration file before starting.
+   Plain-language study summary: This change teaches the app how to read one central configuration file before it starts doing real work. The settings file is like the project's control panel: it says which LLM provider, embedding provider, vector store, retrieval strategy, and logging setup should be used. The code turns that YAML text into typed Python objects, then checks that required fields are present so the program fails early with a useful message instead of breaking later in a confusing place.
+   Study pointers: src/core/settings.py, config/settings.yaml, tests/unit/test_config_loading.py, dataclasses, validation.
    Benefit: Future features can rely on one validated config source instead of scattered hardcoded values.
    Commit: feat(config): [A3] implement config loader
 
