@@ -82,7 +82,7 @@
 | C10 | BatchProcessor | [x] | 2026-07-06 | BatchProcessor、dense/sparse 批处理编排、批次耗时记录与顺序稳定测试已完成 |
 | C11 | BM25Indexer（倒排索引+IDF计算） | [x] | 2026-07-06 | BM25Indexer 倒排索引、IDF 计算、JSON 持久化、load/query/upsert 与 roundtrip 测试已完成 |
 | C12 | VectorUpserter（幂等upsert） | [x] | 2026-07-06 | VectorUpserter、稳定 chunk_id、BaseVectorStore upsert、幂等性与批量顺序测试已完成 |
-| C13 | ImageStorage（图片存储+SQLite索引） | [ ] | | |
+| C13 | ImageStorage（图片存储+SQLite索引） | [x] | 2026-07-06 | ImageStorage、图片文件保存、SQLite image_index、collection 查询与持久化测试已完成 |
 | C14 | Pipeline 编排（MVP 串起来） | [ ] | | |
 | C15 | 脚本入口 ingest.py | [ ] | | |
 
@@ -158,14 +158,14 @@
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
 | 阶段 B | 16 | 16 | 100% |
-| 阶段 C | 15 | 12 | 80% |
+| 阶段 C | 15 | 13 | 87% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
 | 阶段 F | 5 | 0 | 0% |
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **31** | **46%** |
+| **总计** | **68** | **32** | **47%** |
 
 
 ---
