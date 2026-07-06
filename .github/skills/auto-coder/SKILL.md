@@ -108,7 +108,14 @@ Round 3 still failing → STOP, show failure report to user
 
 1. **Update `DEV_SPEC.md`** (global file): change task marker `[ ]` → `[x]`
 2. **Re-sync**: `python .github/skills/auto-coder/scripts/sync_spec.py --force`
-3. **Show summary & ask**:
+3. **Write interview story on section completion**:
+    - When a completed task also completes a schedule section/phase (for example all tasks in Phase B are `[x]`), create or update a separate Markdown file under `docs/interview-stories/`.
+    - File naming convention: `phase-<letter-or-name>-<short-topic>.md` (for example `phase-b-pluggable-libs-layer.md`).
+    - Include two concise sections:
+       - `Shorter 45-Second Version`: a spoken interview narrative that summarizes what was built, key decisions, and impact.
+       - `One Strong Interview Framing`: a strong answer to a likely interviewer follow-up such as the hardest part, tradeoff, or design decision.
+    - Keep it interview-ready: clear, concrete, and focused on engineering decisions rather than task-by-task changelog detail.
+4. **Show summary & ask**:
 
 Before asking for the commit choice, include three concise sections:
 - **Technical summary**: describe the implementation in engineering terms, including the main abstractions, modules, contracts, tests, and validation results.
