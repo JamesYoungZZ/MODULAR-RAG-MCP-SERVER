@@ -78,7 +78,7 @@
 | C6 | MetadataEnricher | [x] | 2026-07-06 | MetadataEnricher 规则增强、LLM JSON 增强、失败降级与契约测试已完成 |
 | C7 | ImageCaptioner | [x] | 2026-07-06 | ImageCaptioner、Vision LLM caption 写回、禁用/异常降级与 fallback 测试已完成 |
 | C8 | DenseEncoder | [x] | 2026-07-06 | DenseEncoder、BaseEmbedding 批量调用、ChunkRecord dense_vector 输出与维度校验测试已完成 |
-| C9 | SparseEncoder | [ ] | | |
+| C9 | SparseEncoder | [x] | 2026-07-06 | SparseEncoder、BM25-ready term frequency sparse_vector、空文本行为与单元测试已完成 |
 | C10 | BatchProcessor | [ ] | | |
 | C11 | BM25Indexer（倒排索引+IDF计算） | [ ] | | |
 | C12 | VectorUpserter（幂等upsert） | [ ] | | |
@@ -158,14 +158,14 @@
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
 | 阶段 B | 16 | 16 | 100% |
-| 阶段 C | 15 | 8 | 53% |
+| 阶段 C | 15 | 9 | 60% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
 | 阶段 F | 5 | 0 | 0% |
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **27** | **40%** |
+| **总计** | **68** | **28** | **41%** |
 
 
 ---
