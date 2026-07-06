@@ -110,10 +110,18 @@ Round 3 still failing → STOP, show failure report to user
 2. **Re-sync**: `python .github/skills/auto-coder/scripts/sync_spec.py --force`
 3. **Show summary & ask**:
 
+Before asking for the commit choice, include three concise sections:
+- **Technical summary**: describe the implementation in engineering terms, including the main abstractions, modules, contracts, tests, and validation results.
+- **Plain-language summary**: explain what changed in non-technical language suitable for a product or learning discussion.
+- **Benefit**: explain what practical value the change adds now and what it enables for future tasks.
+
 ```
 ✅ [A3] 配置加载与校验 — done
    Files: src/core/settings.py, tests/unit/test_settings.py
    Tests: 8/8 passed
+   Technical summary: Added typed settings models, YAML loading, validation, and unit coverage.
+   Plain-language summary: The app can now read and check its configuration file before starting.
+   Benefit: Future features can rely on one validated config source instead of scattered hardcoded values.
    Commit: feat(config): [A3] implement config loader
 
    "commit" → git add + commit
