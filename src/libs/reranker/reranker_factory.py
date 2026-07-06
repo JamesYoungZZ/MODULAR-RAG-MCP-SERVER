@@ -39,9 +39,11 @@ def _normalize_backend(backend: str) -> str:
 
 
 def _register_builtin_backends(factory: type[RerankerFactory]) -> None:
+    from libs.reranker.cross_encoder_reranker import CrossEncoderReranker
     from libs.reranker.llm_reranker import LLMReranker
 
     builtin_backends: dict[str, RerankerBuilder] = {
+        "cross_encoder": CrossEncoderReranker,
         "llm": LLMReranker,
     }
     for backend, builder in builtin_backends.items():
