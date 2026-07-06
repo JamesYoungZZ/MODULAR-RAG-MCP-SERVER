@@ -72,7 +72,7 @@
 |---------|---------|------|---------|------|
 | C1 | 定义核心数据类型/契约（Document/Chunk/ChunkRecord） | [x] | 2026-07-06 | Document/Chunk/ChunkRecord 数据契约、序列化、metadata.source_path 与 images 规范测试已完成 |
 | C2 | 文件完整性检查（SHA256） | [x] | 2026-07-06 | FileIntegrityChecker/SQLiteIntegrityChecker、SHA256、success/failed 记录、WAL 并发写入测试已完成 |
-| C3 | Loader 抽象基类与 PDF Loader | [ ] | | |
+| C3 | Loader 抽象基类与 PDF Loader | [x] | 2026-07-06 | BaseLoader、PdfLoader 最小 PDF→Document、图片占位符/metadata、提取失败降级与契约测试已完成 |
 | C4 | Splitter 集成（调用 Libs） | [ ] | | |
 | C5 | Transform 基类 + ChunkRefiner | [ ] | | |
 | C6 | MetadataEnricher | [ ] | | |
