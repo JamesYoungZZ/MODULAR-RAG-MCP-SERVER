@@ -26,6 +26,7 @@ class EmbeddingFactory:
 
     @classmethod
     def create(cls, settings: Settings) -> BaseEmbedding:
+        _register_builtin_providers(cls)
         provider_key = _normalize_provider(settings.embedding.provider)
         if provider_key not in cls._providers:
             available = ", ".join(sorted(cls._providers)) or "none"
@@ -37,6 +38,17 @@ class EmbeddingFactory:
 
 def _normalize_provider(provider: str) -> str:
     return provider.strip().lower()
+
+
+def _register_builtin_providers(factory: type[EmbeddingFactory]) -> None:
+    from libs.embedding.openai_embedding import AzureOpenAIEmbedding, OpenAIEmbedding
+
+    builtin_providers: dict[str, ProviderBuilder] = {
+        "openai": OpenAIEmbedding,
+        "azure": AzureOpenAIEmbedding,
+    }
+    for provider, builder in builtin_providers.items():
+        factory._providers.setdefault(provider, builder)
 
 
 __all__ = ["EmbeddingFactory", "ProviderBuilder"]
