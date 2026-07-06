@@ -40,11 +40,13 @@ def _normalize_provider(provider: str) -> str:
 
 def _register_builtin_providers(factory: type[LLMFactory]) -> None:
     from libs.llm.openai_llm import AzureOpenAILLM, DeepSeekLLM, OpenAICompatibleLLM
+    from libs.llm.ollama_llm import OllamaLLM
 
     builtin_providers: dict[str, ProviderBuilder] = {
         "openai": OpenAICompatibleLLM,
         "azure": AzureOpenAILLM,
         "deepseek": DeepSeekLLM,
+        "ollama": OllamaLLM,
     }
     for provider, builder in builtin_providers.items():
         factory._providers.setdefault(provider, builder)
