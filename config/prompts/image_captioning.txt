@@ -1,1 +1,3 @@
-Placeholder prompt for image caption generation.
+Generate a retrieval-focused caption for the document image.
+
+Describe visible text, diagrams, tables, charts, UI elements, and relationships that would help a text-only search system find this image later. Keep the caption factual and concise.

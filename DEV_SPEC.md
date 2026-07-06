@@ -1986,7 +1986,7 @@ dashboard:
 | C4 | Splitter 集成（调用 Libs） | [x] | 2026-07-06 | DocumentChunker 调用 SplitterFactory、生成稳定 Chunk ID、继承 metadata、分发图片引用与契约测试已完成 |
 | C5 | Transform 基类 + ChunkRefiner | [x] | 2026-07-06 | BaseTransform、ChunkRefiner、LLM prompt 调用、不可变 Chunk 输出与单元测试已完成 |
 | C6 | MetadataEnricher | [x] | 2026-07-06 | MetadataEnricher 规则增强、LLM JSON 增强、失败降级与契约测试已完成 |
-| C7 | ImageCaptioner | [ ] | | |
+| C7 | ImageCaptioner | [x] | 2026-07-06 | ImageCaptioner、Vision LLM caption 写回、禁用/异常降级与 fallback 测试已完成 |
 | C8 | DenseEncoder | [ ] | | |
 | C9 | SparseEncoder | [ ] | | |
 | C10 | BatchProcessor | [ ] | | |
@@ -2068,14 +2068,14 @@ dashboard:
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
 | 阶段 B | 16 | 16 | 100% |
-| 阶段 C | 15 | 6 | 40% |
+| 阶段 C | 15 | 7 | 47% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
 | 阶段 F | 5 | 0 | 0% |
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **25** | **37%** |
+| **总计** | **68** | **26** | **38%** |
 
 
 ---
