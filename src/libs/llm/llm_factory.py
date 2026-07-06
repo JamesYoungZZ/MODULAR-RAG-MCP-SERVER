@@ -26,6 +26,7 @@ class LLMFactory:
 
     @classmethod
     def create(cls, settings: Settings) -> BaseLLM:
+        _register_builtin_providers(cls)
         provider_key = _normalize_provider(settings.llm.provider)
         if provider_key not in cls._providers:
             available = ", ".join(sorted(cls._providers)) or "none"
@@ -35,6 +36,18 @@ class LLMFactory:
 
 def _normalize_provider(provider: str) -> str:
     return provider.strip().lower()
+
+
+def _register_builtin_providers(factory: type[LLMFactory]) -> None:
+    from libs.llm.openai_llm import AzureOpenAILLM, DeepSeekLLM, OpenAICompatibleLLM
+
+    builtin_providers: dict[str, ProviderBuilder] = {
+        "openai": OpenAICompatibleLLM,
+        "azure": AzureOpenAILLM,
+        "deepseek": DeepSeekLLM,
+    }
+    for provider, builder in builtin_providers.items():
+        factory._providers.setdefault(provider, builder)
 
 
 __all__ = ["LLMFactory", "ProviderBuilder"]

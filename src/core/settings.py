@@ -20,6 +20,13 @@ class SettingsError(ValueError):
 class ProviderModelSettings:
     provider: str
     model: str | None = None
+    api_key: str | None = None
+    base_url: str | None = None
+    azure_endpoint: str | None = None
+    deployment_name: str | None = None
+    api_version: str | None = None
+    temperature: float | None = None
+    max_tokens: int | None = None
 
 
 @dataclass(frozen=True)
@@ -173,6 +180,13 @@ def _provider_model_settings(raw_data: dict[str, Any], section: str) -> Provider
     return ProviderModelSettings(
         provider=_required_value(raw_data, f"{section}.provider"),
         model=_optional_value(raw_data, f"{section}.model"),
+        api_key=_optional_value(raw_data, f"{section}.api_key"),
+        base_url=_optional_value(raw_data, f"{section}.base_url"),
+        azure_endpoint=_optional_value(raw_data, f"{section}.azure_endpoint"),
+        deployment_name=_optional_value(raw_data, f"{section}.deployment_name"),
+        api_version=_optional_value(raw_data, f"{section}.api_version"),
+        temperature=_optional_float(raw_data, f"{section}.temperature"),
+        max_tokens=_optional_int(raw_data, f"{section}.max_tokens"),
     )
 
 
@@ -228,6 +242,15 @@ def _optional_int(raw_data: dict[str, Any], field_path: str) -> int | None:
     if not isinstance(value, int) or isinstance(value, bool):
         raise SettingsError(f"Settings field {field_path} must be an integer")
     return value
+
+
+def _optional_float(raw_data: dict[str, Any], field_path: str) -> float | None:
+    value = _get_field(raw_data, field_path)
+    if _is_missing(value):
+        return None
+    if not isinstance(value, int | float) or isinstance(value, bool):
+        raise SettingsError(f"Settings field {field_path} must be a number")
+    return float(value)
 
 
 def _required_bool(raw_data: dict[str, Any], field_path: str) -> bool:
