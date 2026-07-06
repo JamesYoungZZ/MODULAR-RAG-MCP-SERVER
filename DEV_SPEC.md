@@ -1984,7 +1984,7 @@ dashboard:
 | C2 | 文件完整性检查（SHA256） | [x] | 2026-07-06 | FileIntegrityChecker/SQLiteIntegrityChecker、SHA256、success/failed 记录、WAL 并发写入测试已完成 |
 | C3 | Loader 抽象基类与 PDF Loader | [x] | 2026-07-06 | BaseLoader、PdfLoader 最小 PDF→Document、图片占位符/metadata、提取失败降级与契约测试已完成 |
 | C4 | Splitter 集成（调用 Libs） | [x] | 2026-07-06 | DocumentChunker 调用 SplitterFactory、生成稳定 Chunk ID、继承 metadata、分发图片引用与契约测试已完成 |
-| C5 | Transform 基类 + ChunkRefiner | [ ] | | |
+| C5 | Transform 基类 + ChunkRefiner | [x] | 2026-07-06 | BaseTransform、ChunkRefiner、LLM prompt 调用、不可变 Chunk 输出与单元测试已完成 |
 | C6 | MetadataEnricher | [ ] | | |
 | C7 | ImageCaptioner | [ ] | | |
 | C8 | DenseEncoder | [ ] | | |
@@ -2068,14 +2068,14 @@ dashboard:
 |------|---------|--------|------|
 | 阶段 A | 3 | 3 | 100% |
 | 阶段 B | 16 | 16 | 100% |
-| 阶段 C | 15 | 0 | 0% |
+| 阶段 C | 15 | 5 | 33% |
 | 阶段 D | 7 | 0 | 0% |
 | 阶段 E | 6 | 0 | 0% |
 | 阶段 F | 5 | 0 | 0% |
 | 阶段 G | 6 | 0 | 0% |
 | 阶段 H | 5 | 0 | 0% |
 | 阶段 I | 5 | 0 | 0% |
-| **总计** | **68** | **19** | **28%** |
+| **总计** | **68** | **24** | **35%** |
 
 
 ---
