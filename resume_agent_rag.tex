@@ -1,0 +1,188 @@
+% !TEX program = xelatex
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[UTF8]{ctex}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\linespread{1.2} 
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 【核心修复1】将上边距再缩小一点，底部高度给足，彻底杜绝内容被挤到第三页
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.6in} 
+\addtolength{\textheight}{1.2in} 
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{2pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{4pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{0pt}
+}
+
+% 【核心修复2】强制禁用列表环境（itemize）的自动垂直拉伸（itemsep=0pt, parsep=0pt）
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{4pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------个人信息----------
+\begin{center}
+    \textbf{\Huge 杨光 (James Yang)} \\ \vspace{4pt}
+    \href{mailto:guangyang98.sde@gmail.com}{guangyang98.sde@gmail.com} $|$ 
+    \href{tel:+8617760218022}{+8617760218022}
+\end{center}
+\vspace{6pt}
+
+%-----------工作经历-----------
+\section{工作经历}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Zalando 嘉兰朵（深圳）科技发展有限公司}{2025年5月 -- 至今}
+      {\textbf{全栈工程师} $|$ \textit{React, Python, LangGraph, RAG, WebSocket, Pydantic}}{中国，深圳}
+      \resumeItemListStart
+        \resumeItem{\textbf{全栈主导直播域建设：}独立负责 Zalando 直播平台 (ZLP) 前端工程架构，闭环完成观众端、主播中控台及运营后台 3 大核心业务场景的研发，覆盖直播发现、互动评论、商品流转与大促场控。}
+        \resumeItem{\textbf{LangGraph 工作流与评估管线：}研发 ZLP 直播 AI 场控助手，基于 LangGraph 构建评论意图路由。搭建基于 LangSmith/Ragas 的自动化评估管线，构建 3000+ 真实意图的 Golden Dataset，使核心路由节点在多轮压测中准确率稳定在 \textbf{95\%} 以上，平均降低人工负荷 \textbf{60\%}。}
+        \resumeItem{\textbf{生产级 RAG 检索与防幻觉：}构建基于全量商品 SKU 的混合检索 (Hybrid RAG) 知识库；针对高并发直播场次，引入\textbf{动态元数据过滤 (Metadata Filtering)}，在保障 P99 检索延迟低于 100ms 的同时杜绝商品幻觉，有效互动频率提升 \textbf{35\%}。}
+        \resumeItem{\textbf{高性能流式通信渲染：}基于 WebSocket 构建多端状态同步机制，实现评论弹幕、商品事件和直播间状态的低延迟双向通信，确保高并发直播场景下 UI 状态的亚秒级响应，用户单次会话时长提升 \textbf{21\%}。}
+        \resumeItem{\textbf{Agent 可观测性体系建设：}搭建大模型链路监控与可观测性基建 (Observability)，基于 OpenTelemetry 规范追踪多步调用的中间态耗时与 Token 消耗，提供可视化 Trace 面板，快速定位 API 熔断或长尾请求瓶颈。}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {独立开发者 / 全栈工程师}{2024年4月 -- 2025年4月}
+      {\textbf{宁夏大学计算机实验室（合作研发）} $|$ \textit{React, Python/Go, Docker, Redis}}{中国，银川}
+      \resumeItemListStart
+        \resumeItem{\textbf{校园 OJ 平台全栈架构：}与宁夏大学大数据实验和ACM校队合作，从 0 到 1 独立设计并研发新一代校园 Online Judge 评测系统，支撑校内算法课程日常教学与 ACM 集训队训练。}
+        \resumeItem{\textbf{沙盒评测引擎 (Sandbox)：}基于 Docker 与 cgroups 构建安全的隔离运行环境，通过限制 CPU/内存资源与系统调用 (seccomp)，实现对 C++/Java/Python 等多语言代码的安全编译与毫秒级评测，防御恶意代码注入。}
+        \resumeItem{\textbf{并发提交与状态同步：}针对“比赛模式”下的高频并发提交，引入 Redis 消息队列进行削峰填谷，保障系统的异步处理稳定性；并在前端基于 WebSocket 实现评测状态的低延迟实时推送。}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon Web Services (AWS) 亚马逊云科技}{2022年7月 -- 2024年3月}
+      {\textbf{软件工程师} $|$ \textit{React, TypeScript, Redux, AWS, Webpack}}{爱尔兰，都柏林}
+      \resumeItemListStart
+        \resumeItem{\textbf{企业级监控终端重构：}核心参与 AWS CloudWatch 控制台的架构演进，主导仪表盘组件性能调优、监控指标可视化及前端基础设施建设，提升资源发现效率，缩短 TTI \textbf{30\%}，并提升了 \textbf{15\%} 的用户活跃会话时长。}
+        \resumeItem{\textbf{十万级数据渲染优化：}从 0 到 1 研发 CloudWatch 高基数遥测数据看板 (Table Widget)。结合虚拟列表视图与 Web Workers 离线解析技术，实现 \textbf{10万+ 数据}的流畅滚动渲染。该组件被超过 \textbf{40\%} 的活跃仪表盘采用，降低 \textbf{60\%} 自定义指标查询复杂度。}
+        \resumeItem{\textbf{前端微服务化改造 (Micro-frontends)：}基于 Webpack Module Federation 将独立的可视化图表组件解耦，大幅降低巨石应用的本地构建时间，并实现跨团队业务模块的独立部署与动态热更新。}
+        \resumeItem{\textbf{无障碍访问 (A11Y) 标准化：}全面清查 CloudWatch 仪表盘的无障碍质量，修复键盘导航、焦点劫持及 ARIA 标签问题，确保产品严格达成 \textbf{WCAG 2.1 AA} 国际标准，企业级用户采用率提升 \textbf{10\%}。}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {建信金融科技 (CCB Fintech)}{2020年7月 -- 2021年4月}
+      {\textbf{全栈工程师} $|$ \textit{Java, Spring Boot, 微信小程序, MySQL, Redis}}{中国，深圳}
+      \resumeItemListStart
+        \resumeItem{\textbf{房贷业务核心开发：}负责微信小程序端个人房贷申请流程的研发迭代，覆盖进件、资料上传及进度追踪等高优链路，支撑每月 \textbf{1万+ 活跃用户}，缩短平均贷款申请流程 \textbf{40\%}。}
+        \resumeItem{\textbf{前端基建与异常监控：}从 0 到 1 接入前端监控与埋点基建，封装统一的全局错误捕获机制 (Error Boundary) 与请求拦截器，实现核心链路白屏报错率下降 \textbf{30\%}，并支撑了转化漏斗的精准数据分析。}
+        \resumeItem{\textbf{复杂金融表单交互与后端优化：}深度对接内部信贷微服务 API，构建高容错的提交链路；通过 \textbf{Redis 多级缓存}和查询性能优化，降低 \textbf{40\%} 的数据库负载，确保高并发 \textbf{99.9\%} 可用性。}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------项目经历-----------
+\section{项目经历}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Zalando 核心业务：LiveStream Copilot (AI 主播助手)} $|$ \emph{LangGraph, Hybrid RAG, FastAPI, React}}{2025年}
+  \resumeItemListStart
+    \resumeItem{\textbf{状态化 Agent 设计：}基于 LangGraph 构建流式响应的直播场控 Agent，精细化管理从弹幕接入、意图路由、知识检索到草稿生成的全链路中间态 (Intermediate State)。}
+    \resumeItem{\textbf{混合检索架构升级 (Hybrid RAG)：}升级知识库检索策略至“混合检索 + 重排序”，结合向量检索与 BM25 并引入 BGE-Reranker 模型进行二次打分，将长尾复杂业务问题的 Top-3 召回准确率提升至 \textbf{90\%} 以上。}
+    \resumeItem{\textbf{动态上下文裁剪与成本管控：}针对长时直播流，引入基于 Token 阈值的滑动窗口机制 (Sliding Window) 与语义缓存。在保留核心商品交互历史的同时，将大模型单次请求的 Token 消耗降低 \textbf{40\%}，整体 API 调用成本节约 \textbf{60\%}。}
+    \resumeItem{\textbf{人机协同与审查机制 (HITL)：}设计具备多维排序策略的主播审核流，利用 LangGraph 中断机制，支持生成草稿的实时编辑、一键采纳与拒绝归因，确保面向观众的 AI 输出绝对可控。}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Agent 知识检索中枢与通用 RAG 框架} $|$ \emph{独立设计与开发}}{2024.09 -- 2025.02}
+  \resumeItemListStart
+    \resumeItem{\textbf{背景：}针对企业内部知识文档分散、传统关键词搜索召回不稳定、AI Agent 难以稳定接入私有知识库的问题，设计并实现了一套面向 Agent 场景的通用 RAG 检索框架。系统将 PDF、技术文档、业务手册等非结构化资料转化为可检索、可引用、可通过 Tool Calling 调用的知识服务，支持快速适配客服问答、研发文档检索、企业知识库等场景。}
+    \resumeItem{\textbf{目标：}构建一个可复用、可观测、可扩展的私有知识接入底座，通过 MCP 协议将 RAG 检索能力封装为标准 Tool，使 Claude Desktop、Copilot 或自定义 Agent 能以统一接口调用知识库；同时支持混合检索、精排、组件化 Provider 切换和基础评估闭环，提升 Agent 回答的依据透明度和系统可维护性。}
+    \resumeItem{\textbf{过程：}}
+    \vspace{-6pt}
+    \begin{itemize}[leftmargin=0.22in, itemsep=0pt, parsep=0pt, topsep=0pt]
+      \item \small{设计 Agent + RAG 分层架构，基于 MCP 将私有知识库封装为标准 Tool，使 Agent 能通过 Tool Calling 获取带引用来源的检索结果。}
+      \item \small{实现 BM25 + Dense Embedding 双路召回，通过 RRF 融合与 Cross-Encoder / LLM Rerank 精排，在自建评估集上较单路 Dense 检索 Top-K 命中率提升约 \textbf{15\%-25\%}。}
+      \item \small{构建五阶段 Ingestion Pipeline，覆盖 PDF 解析、文本切分、元数据增强、Embedding 生成与幂等 Upsert，支撑 \textbf{5k+ 文档}、\textbf{10w+ chunk} 级别知识索引。}
+      \item \small{设计 LLM / Embedding / Reranker / VectorStore / Evaluator 可插拔架构，支持 OpenAI、Azure OpenAI、Ollama、DeepSeek 等多 Provider 配置切换。}
+      \item \small{搭建 Query / Ingestion 双链路 Trace 与可视化 Dashboard，支持召回结果、重排变化、阶段耗时和评估指标分析，提升坏 Case 定位效率。}
+      \item \small{采用 DEV\_SPEC + Agent Skill 辅助开发流程，将需求拆解、编码、测试、配置和打包流程结构化，沉淀 \textbf{60+ 子任务}的 AI 辅助工程实践。}
+    \end{itemize}
+    \vspace{-2pt}
+    \resumeItem{\textbf{结果：}系统完成从文档摄取、混合召回、重排、引用返回到 MCP Tool 调用的完整闭环，支撑 \textbf{5k+ 文档}、\textbf{10w+ chunk} 级别本地知识检索。相比单路 Dense 检索，Hybrid + Rerank 策略在自建评估集上 Top-K 命中率提升约 \textbf{15\%-25\%}；通过可插拔 Provider 架构和 Trace 可观测能力，降低了模型切换、检索调优和 Agent 接入私有知识库的工程复杂度。}
+    \resumeItem{\textbf{技术栈：}\emph{Python / RAG / Agent / Tool Calling / MCP Protocol / BM25 / Dense Retrieval / RRF / Cross-Encoder Rerank / ChromaDB / Streamlit / Ragas / OpenAI / Azure OpenAI / Ollama / DeepSeek}}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ============== SKILLS SECTION ==============
+\section{技术栈}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=2pt]
+    \item \small
+     \textbf{AI \& Agentic Systems}{: LangGraph (Stateful Graphs), Hybrid RAG, Eval Pipelines, VLM, Vector DBs, DeepSeek/Qwen API} \\ \vspace{2pt} 
+     \textbf{Frontend/Fullstack}{: React , Next.js, SSE, WebSocket, Web Workers, Module Federation, GraphQL, Python, FastAPI, Redis}
+\end{itemize}
+
+%-----------教育背景-----------
+\section{教育背景}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {都柏林大学 (University College Dublin, UCD)}{爱尔兰，都柏林}
+      {计算机科学 (完成核心专业课程，因获 AWS 研发全职 Offer 提前离校)}{2021年9月 -- 2022年6月}
+    \resumeSubheading
+      {宁夏大学}{中国，银川}
+      {软件工程学士}{2016年9月 -- 2020年6月}
+  \resumeSubHeadingListEnd
+
+  
+
+%-----------荣誉奖项-----------
+\section{荣誉奖项}
+  \resumeSubHeadingListStart
+      \resumeSubheading
+      {第11届蓝桥杯国际大学生程序设计竞赛}{2018年}
+      {\textbf{省赛第1名}}{宁夏大学，银川}
+      \resumeSubheading
+      {第 11 届蓝桥杯国际大学生程序设计竞赛}{2018年}
+      {\textbf{总决赛第11名}}{麻省理工，美国}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
