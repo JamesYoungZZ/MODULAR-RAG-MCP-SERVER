@@ -1,0 +1,948 @@
+{
+  "schema_version": "commerce-catalog-snapshot-v1",
+  "synthetic": true,
+  "products": [
+    {
+      "canonical_product_id": "PRODUCT-CLOUDSTEP-RUNNER",
+      "sku": "SKU-SNEAKER-001",
+      "name": "CloudStep Runner",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "sand",
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "cushioned",
+        "lightweight"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-NIGHTPACE-RUNNER",
+      "sku": "SKU-NIGHTPACE-101",
+      "name": "NightPace Runner",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "neutral"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-METROFLEX-RUNNER",
+      "sku": "SKU-METROFLEX-201",
+      "name": "MetroFlex Runner",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style_tags": [
+        "road",
+        "cushioned",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-STREETPRO-RUNNER",
+      "sku": "SKU-STREETPRO-301",
+      "name": "StreetPro Runner",
+      "category": "lifestyle",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "street",
+        "structured",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-AEROKNIT-RUNNER",
+      "sku": "SKU-SHOE-005",
+      "name": "AeroKnit Runner",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-SWIFTARC-RUNNER",
+      "sku": "SKU-SHOE-006",
+      "name": "SwiftArc Runner",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-URBANGLIDE",
+      "sku": "SKU-SHOE-007",
+      "name": "UrbanGlide",
+      "category": "running",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-TERRAFLOW-TRAIL",
+      "sku": "SKU-SHOE-008",
+      "name": "TerraFlow Trail",
+      "category": "lifestyle",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-VELOCITY-KNIT",
+      "sku": "SKU-SHOE-009",
+      "name": "Velocity Knit",
+      "category": "trail",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-FLEXWEAVE-RUNNER",
+      "sku": "SKU-SHOE-010",
+      "name": "FlexWeave Runner",
+      "category": "walking",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-CLOUDRUSH",
+      "sku": "SKU-SHOE-011",
+      "name": "CloudRush",
+      "category": "training",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-ROADMUSE",
+      "sku": "SKU-SHOE-012",
+      "name": "RoadMuse",
+      "category": "running",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-PACELINE",
+      "sku": "SKU-SHOE-013",
+      "name": "PaceLine",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-AIRSTRIDE",
+      "sku": "SKU-SHOE-014",
+      "name": "AirStride",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-MOTIONGRID",
+      "sku": "SKU-SHOE-015",
+      "name": "MotionGrid",
+      "category": "lifestyle",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-RUNNOVA",
+      "sku": "SKU-SHOE-016",
+      "name": "RunNova",
+      "category": "trail",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-CITYBOUNCE",
+      "sku": "SKU-SHOE-017",
+      "name": "CityBounce",
+      "category": "walking",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-TRAILECHO",
+      "sku": "SKU-SHOE-018",
+      "name": "TrailEcho",
+      "category": "training",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-SPRINTCORE",
+      "sku": "SKU-SHOE-019",
+      "name": "SprintCore",
+      "category": "running",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-WAVETRACK",
+      "sku": "SKU-SHOE-020",
+      "name": "WaveTrack",
+      "category": "running",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-LIGHTFORM",
+      "sku": "SKU-SHOE-021",
+      "name": "LightForm",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-PULSERIDE",
+      "sku": "SKU-SHOE-022",
+      "name": "PulseRide",
+      "category": "lifestyle",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-ACTIVELOOP",
+      "sku": "SKU-SHOE-023",
+      "name": "ActiveLoop",
+      "category": "trail",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-HORIZONRUN",
+      "sku": "SKU-SHOE-024",
+      "name": "HorizonRun",
+      "category": "walking",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-DASHCRAFT",
+      "sku": "SKU-SHOE-025",
+      "name": "DashCraft",
+      "category": "training",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-TEMPOMESH",
+      "sku": "SKU-SHOE-026",
+      "name": "TempoMesh",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-STREETWAVE",
+      "sku": "SKU-SHOE-027",
+      "name": "StreetWave",
+      "category": "running",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-COREMOTION",
+      "sku": "SKU-SHOE-028",
+      "name": "CoreMotion",
+      "category": "running",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-RIDGESTEP",
+      "sku": "SKU-SHOE-029",
+      "name": "RidgeStep",
+      "category": "lifestyle",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-COMETRUN",
+      "sku": "SKU-SHOE-030",
+      "name": "CometRun",
+      "category": "trail",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-DAILYPACE",
+      "sku": "SKU-SHOE-031",
+      "name": "DailyPace",
+      "category": "walking",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-GLIDEFORM",
+      "sku": "SKU-SHOE-032",
+      "name": "GlideForm",
+      "category": "training",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-NOVAFLEX",
+      "sku": "SKU-SHOE-033",
+      "name": "NovaFlex",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-ECHOSTRIDE",
+      "sku": "SKU-SHOE-034",
+      "name": "EchoStride",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-MOTIONLITE",
+      "sku": "SKU-SHOE-035",
+      "name": "MotionLite",
+      "category": "running",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-TRACKBLOOM",
+      "sku": "SKU-SHOE-036",
+      "name": "TrackBloom",
+      "category": "lifestyle",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-ZENITHRUN",
+      "sku": "SKU-SHOE-037",
+      "name": "ZenithRun",
+      "category": "trail",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-FLOWMARK",
+      "sku": "SKU-SHOE-038",
+      "name": "FlowMark",
+      "category": "walking",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-URBANPULSE",
+      "sku": "SKU-SHOE-039",
+      "name": "UrbanPulse",
+      "category": "training",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-AEROSTREET",
+      "sku": "SKU-SHOE-040",
+      "name": "AeroStreet",
+      "category": "running",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-VECTORRUN",
+      "sku": "SKU-SHOE-041",
+      "name": "VectorRun",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-SOFTSTRIDE",
+      "sku": "SKU-SHOE-042",
+      "name": "SoftStride",
+      "category": "running",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-PEAKMOTION",
+      "sku": "SKU-SHOE-043",
+      "name": "PeakMotion",
+      "category": "lifestyle",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-LOOPRUNNER",
+      "sku": "SKU-SHOE-044",
+      "name": "LoopRunner",
+      "category": "trail",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style_tags": [
+        "trail",
+        "grip",
+        "outdoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-DRIFTPACE",
+      "sku": "SKU-SHOE-045",
+      "name": "DriftPace",
+      "category": "walking",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "style_tags": [
+        "walking",
+        "cushioned",
+        "comfort"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-RAPIDWEAVE",
+      "sku": "SKU-SHOE-046",
+      "name": "RapidWeave",
+      "category": "training",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "style_tags": [
+        "training",
+        "stable",
+        "indoor"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-METRODASH",
+      "sku": "SKU-SHOE-047",
+      "name": "MetroDash",
+      "category": "running",
+      "materials": [
+        "engineered knit upper",
+        "foam midsole"
+      ],
+      "colors": [
+        "black"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-CLOUDLANE",
+      "sku": "SKU-SHOE-048",
+      "name": "CloudLane",
+      "category": "running",
+      "materials": [
+        "synthetic upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-MOTIONPEAK",
+      "sku": "SKU-SHOE-049",
+      "name": "MotionPeak",
+      "category": "running",
+      "materials": [
+        "recycled mesh upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "grey",
+        "blue"
+      ],
+      "style_tags": [
+        "road",
+        "lightweight",
+        "daily"
+      ]
+    },
+    {
+      "canonical_product_id": "PRODUCT-FLEXROUTE",
+      "sku": "SKU-SHOE-050",
+      "name": "FlexRoute",
+      "category": "lifestyle",
+      "materials": [
+        "textile upper",
+        "rubber sole"
+      ],
+      "colors": [
+        "white",
+        "sand"
+      ],
+      "style_tags": [
+        "street",
+        "casual",
+        "daily"
+      ]
+    }
+  ]
+}

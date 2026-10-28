@@ -427,3 +427,8 @@ Skill 采用 **"写作原则 + 项目亮点 + 用户画像 = 定制化简历"** 
 - 📖 **八股整理**：大模型 / RAG / NLP 相关高频面试题
 
 > 👉 **请关注小红书：[不转到大模型不改名](https://www.xiaohongshu.com) 获取以上所有资源。**
+
+
+## 直播商品资料接入
+
+专用 commerce MCP 入口、50款商品各一份 Markdown/PDF、2份共享政策、版本校验与本地混合检索，见 [接入说明](docs/commerce-integration.zh-CN.md)。该入口不会替换原有通用工具或语料。

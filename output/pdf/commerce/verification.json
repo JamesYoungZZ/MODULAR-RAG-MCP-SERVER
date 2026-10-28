@@ -1,0 +1,322 @@
+{
+  "pdf_count": 52,
+  "page_count": 52,
+  "sections": 208,
+  "documents": [
+    {
+      "document_id": "cloudstep-care",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "bec2664180bdb69d69caf9b6a731b99c629aed93cea2ed32f3f867464b438a20"
+    },
+    {
+      "document_id": "nightpace-use",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "b3b615c4e99bc89381cc47dc47d0ceecaf70bcbd6d39133ee43a454ee1313feb"
+    },
+    {
+      "document_id": "metroflex-care",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "5852d9ef74fc2a8bd9820350fa3286c5f7ffe6ad79587a2742c6aaf6913db78f"
+    },
+    {
+      "document_id": "streetpro-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "48235ba072ea3176faf35dafb4d30dd07a8aa0b7f0658c0062473db967706cad"
+    },
+    {
+      "document_id": "aeroknit-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "bd6eb7d933d5c641624398b0416696b39e4f03b1349709695e3c627abb4daacc"
+    },
+    {
+      "document_id": "swiftarc-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "8a144bca1b9385a17ec632a6b1f6cbb46c41a322e81550bc308baa11789960dd"
+    },
+    {
+      "document_id": "urbanglide-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "143feeab6d664000327ce4a6fccf107dbcd1ca3f303af95374d46a72763500a3"
+    },
+    {
+      "document_id": "terraflow-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "afa69de595bb4ab8468e6bafe609670a8f7f14dedca50130edbdec15ec3d68f4"
+    },
+    {
+      "document_id": "velocity-knit-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "4ece3ed5fc0bec3c534fae79a8e4e5d90eba86d79c72476b26ea012e2cdcb06a"
+    },
+    {
+      "document_id": "flexweave-runner-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "e6f8618aa19b8757fbe8a1b94339aeb71b1826625f01a50cebf4e633ca41641d"
+    },
+    {
+      "document_id": "cloudrush-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "74cf0f31283666f65368f3f1f427e0a695d22360c0b885e00b4bb34a60196082"
+    },
+    {
+      "document_id": "roadmuse-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "11c9b57fc3b06859cee6e339a5bd8afafb9547ecbb8a880117d2ea9a611f8e9f"
+    },
+    {
+      "document_id": "paceline-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "7bf428be7acc11d98deed86d7fd08dcd1acf0bb87aee40b638ca8e903ab496c4"
+    },
+    {
+      "document_id": "airstride-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "0a62de2ef259eb4225e7d0b6b45bcf546105e6733dc3b3fa9c04b4133853b3a1"
+    },
+    {
+      "document_id": "motiongrid-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "7d2eb02185a5159dad67b25dfad8c413dc04aed83d9c86de139ae41ceadf5ebb"
+    },
+    {
+      "document_id": "runnova-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "557b2e93d8734ff4b29841f0a387cfeace0a9c650b8d12c52a9a57ea18dac223"
+    },
+    {
+      "document_id": "citybounce-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "5d4cd56c879577067b4fc0f745055bb68eaa2a424666ad98ef394f664b152738"
+    },
+    {
+      "document_id": "trailecho-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "8dce39558232fc2094dae27b5947c4b71e0d286feedeb66aeedfad356c594970"
+    },
+    {
+      "document_id": "sprintcore-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "a5b8e91bf121b6bb5c4d6d2146c6e75ee611efa97758cf986ae253dddf56c322"
+    },
+    {
+      "document_id": "wavetrack-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "a1588c7f456cae1fc19ca8c26ed6f107bc14f75d6117f91e38a879242278f4e7"
+    },
+    {
+      "document_id": "lightform-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "d7e074c1705dffd07f876e443c5b2ece8c6711c0ab06b5f4efc678043ff5c5df"
+    },
+    {
+      "document_id": "pulseride-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "9f239f8edfc9a393add2b2de2c54d82d9085f0113314dec21ca8b703a32942da"
+    },
+    {
+      "document_id": "activeloop-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "9e9e459513f01f8a19ca234fd766633d3fd80c1ef5f3a947ad78e02c8478f774"
+    },
+    {
+      "document_id": "horizonrun-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "134e6f60064f77a5ea9dd584f384ed3ceddcb5ee2506eb76c6d9fc88edb8d15a"
+    },
+    {
+      "document_id": "dashcraft-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "53ddce17e5eecf949a949c835b01aa819a2dcb538f78d6fc52c424aa463e71a5"
+    },
+    {
+      "document_id": "tempomesh-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "20677260ce63a1345d6e6fd7de6b65f2e4f00c7fdbc8c606ad3e6fe1eb98f3cd"
+    },
+    {
+      "document_id": "streetwave-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "92433666abae8272dace44cf223f5b00fe9bb41d63a16baa29cfe9845099eb8c"
+    },
+    {
+      "document_id": "coremotion-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "8da6fec592d8d48f77d2eb559bcab7e3e0962dffb69fca739ba033ffd1ae5571"
+    },
+    {
+      "document_id": "ridgestep-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "249ed6bb7c6a4d8d3e15fd670c8ab7f63990fd445e3f7ad7ef9606b617aa9c75"
+    },
+    {
+      "document_id": "cometrun-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "52a5af38df9d37d885e6336cdd19568e9a38ac7cc0331af4cb1cfa25784a9f4b"
+    },
+    {
+      "document_id": "dailypace-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "24affa560bef98d5ed268e1185cff8f390ad7aac421ed8e8f600c404b5ca7e2b"
+    },
+    {
+      "document_id": "glideform-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "7d314e43e1e0ed968cbf9fd1859b264ce5aad5dc25c4e7e52ab278ca13bca022"
+    },
+    {
+      "document_id": "novaflex-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "fca82ddc90fa124918d9dd649f596ffbeadfa713202cb6aa3fc9327d6bdef424"
+    },
+    {
+      "document_id": "echostride-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "341ff1e353792fd74119856f22b8154dd20ddbb58583d341c6782369ed9e5523"
+    },
+    {
+      "document_id": "motionlite-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "d3ebedfa0b96641e6e64bf03e7d0a6c501c559c66d953ecd2d4000db2f708f69"
+    },
+    {
+      "document_id": "trackbloom-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "52d0dac288291f261532fbd358fdfbfb61960fa00cba82f0ec0b5881d33928d9"
+    },
+    {
+      "document_id": "zenithrun-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "8e8d499a2c4cb940902b15391515227dfbaf63a402deaeb9a4b946fc3a794d27"
+    },
+    {
+      "document_id": "flowmark-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "6453ae13e82e70be5aa37316ac2f3e96ed2e481d7ffbcdd3c3c714047bcc6948"
+    },
+    {
+      "document_id": "urbanpulse-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "a1c72c0d8b06e0dc1b41af3b64627877d1f1a7df1a372b98b43a1668dd9639e5"
+    },
+    {
+      "document_id": "aerostreet-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "f350a1482a681a19660059781dc8d5b67382222578e476780324879cfecab119"
+    },
+    {
+      "document_id": "vectorrun-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "a259bd80e1db92e00ba1a3ae36bbabe8999e5cd8defe4b46346fcc984c6d50c0"
+    },
+    {
+      "document_id": "softstride-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "3564e1d3b0b346c016a60b754e77b0998653529ea405f6c98d3385e0c1882792"
+    },
+    {
+      "document_id": "peakmotion-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "f76151d7596174a0ef53720cfdc36e35b41bafa8fb8ef170b9bdcb03f4cacf86"
+    },
+    {
+      "document_id": "looprunner-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "0e0917923c7fdf29052c6cdf4d84e2d878619fdc23dc47541a88eeb69cd5d67d"
+    },
+    {
+      "document_id": "driftpace-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "599da82ef1e419f65d579bd0bddb83b14f776f89becaf68eb76e04d309a1ba40"
+    },
+    {
+      "document_id": "rapidweave-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "07d6dd4f5a124c4a03de8d929b054bac0c9f484996bd0c5c8f2178d26d2e3b34"
+    },
+    {
+      "document_id": "metrodash-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "2c5d385921fc0a33e96943c8932c6a38a61b7b5308b19b323f71289c04bbae8f"
+    },
+    {
+      "document_id": "cloudlane-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "2aef08f3700a3cef46aed00d88f2b56481227510ab653f91d56458928de3b97a"
+    },
+    {
+      "document_id": "motionpeak-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "e12b6cc3783bb6b0bf8de48cba4635f40e1b94e6240765c827c0d44486f27d55"
+    },
+    {
+      "document_id": "flexroute-guide",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "8f7e2cf139f6b141e930b11c34bec89701389980102767d635f7b6d07eeb092e"
+    },
+    {
+      "document_id": "returns-de",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "71e784c867a95c1a007969223071890936a50a50c275c5ac162512b6b5fb4861"
+    },
+    {
+      "document_id": "returns-fr",
+      "pages": 1,
+      "headings": 4,
+      "pdf_sha256": "605f1fb1213ed0378eab4693088c226acd91a5044267ab540babcb76c5ba0ad5"
+    }
+  ],
+  "visual_review": "All 52 rendered pages reviewed in four contact sheets; no clipping or overlap found.",
+  "paid_evaluation_run": false,
+  "test_suite_run": false
+}

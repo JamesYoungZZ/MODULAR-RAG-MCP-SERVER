@@ -105,3 +105,7 @@ traces.jsonl
 .env.*.local
 secrets.yaml
 nonexistent_traces.jsonl/
+
+# Rebuildable commerce embeddings and PDF QA renders
+fixtures/commerce/vectors.json*
+tmp/pdfs/
