@@ -146,8 +146,27 @@ class SparseEncoder:
         """
         tokens: List[str] = []
 
+        # Protect hyphen/underscore-joined alphanumeric terms from being split
+        # by jieba (e.g. "machine-learning", "deep_learning", "GPT-4").
+        joined_terms: Dict[str, str] = {}
+        placeholder_prefix = "SPARSEJOINED"
+        while placeholder_prefix in text:
+            placeholder_prefix += "X"
+
+        def _protect(match: "re.Match[str]") -> str:
+            term = match.group(0)
+            placeholder = f"{placeholder_prefix}{len(joined_terms)}"
+            joined_terms[placeholder] = term
+            return placeholder
+
+        protected_text = re.sub(
+            r'(?<![A-Za-z0-9])[A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)+(?![A-Za-z0-9])',
+            _protect,
+            text,
+        )
+
         # Use jieba to segment the text (handles both Chinese and English)
-        raw_tokens = jieba.lcut(text)
+        raw_tokens = jieba.lcut(protected_text)
 
         # Clean tokens: keep only alphanumeric and Chinese characters
         for token in raw_tokens:
@@ -157,7 +176,7 @@ class SparseEncoder:
             # Skip pure punctuation / whitespace
             if re.fullmatch(r'[\s\W]+', token, re.UNICODE):
                 continue
-            tokens.append(token)
+            tokens.append(joined_terms.get(token, token))
         
         # Apply lowercase if configured
         if self.lowercase:
