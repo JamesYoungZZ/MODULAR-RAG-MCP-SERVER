@@ -1,0 +1,25 @@
+# Team & Architecture Decision Ledger (Managed with Digital Employee)
+decisions:
+  - id: RAG-DEC-001
+    scope: "src/mcp_server/commerce_server.py"
+    rule: "Commerce MCP entry point must bind tenant_id and corpus_root from server environment variables, never from LLM tool arguments."
+    reason: "Prevent cross-tenant data leakage or arbitrary collection/path traversal via prompt injection."
+    status: APPROVED_POLICY
+    owner: "jamesyang"
+    verified_at: "2026-11-16"
+
+  - id: RAG-DEC-002
+    scope: "fixtures/commerce/*"
+    rule: "Any edit to fixtures/commerce/documents/*.md requires updating SHA-256 digests in manifest.json and rebuilding vectors.json via scripts/index_commerce.py --dense."
+    reason: "CommerceCorpus enforces strict SHA-256 digest and corpus_version matching at startup."
+    status: APPROVED_POLICY
+    owner: "jamesyang"
+    verified_at: "2026-11-16"
+
+  - id: RAG-DEC-003
+    scope: "src/commerce/corpus.py"
+    rule: "Retrieval returns verbatim authored Markdown sections with metadata; never add an intermediate LLM summarization or rewrite step inside MCP."
+    reason: "Preserve exact qualifiers/exceptions for downstream programmatic grounding checks in livestream-copilot."
+    status: APPROVED_POLICY
+    owner: "jamesyang"
+    verified_at: "2026-11-16"

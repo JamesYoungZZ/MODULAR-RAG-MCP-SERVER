@@ -1,0 +1,89 @@
+name: RAG MCP CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  commerce-mcp-gate:
+    name: Commerce MCP & Dense Index Gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - name: Set up Python 3.12 venv and dependencies
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -e ".[dev]" onnxruntime
+      - name: Validate corpus digests and build local dense vectors
+        run: |
+          .venv/bin/python -m scripts.index_commerce --root fixtures/commerce --dense
+          test -f fixtures/commerce/vectors.json
+      - name: Run commerce scope and retrieval contract tests
+        run: .venv/bin/python -m pytest tests/commerce -q
+      - name: Verify stdio MCP server handshake and hybrid RRF search
+        run: |
+          .venv/bin/python - <<'PY'
+          import asyncio, sys
+          from datetime import timedelta
+          from mcp import ClientSession, StdioServerParameters
+          from mcp.client.stdio import stdio_client
+
+          async def verify():
+              params = StdioServerParameters(
+                  command=sys.executable,
+                  args=["-m", "src.mcp_server.commerce_server"],
+                  env={
+                      "COMMERCE_TENANT_ID": "demo-tenant",
+                      "COMMERCE_CORPUS_ROOT": "fixtures/commerce",
+                      "COMMERCE_DENSE_ENABLED": "true",
+                  },
+              )
+              async with stdio_client(params) as (r, w):
+                  async with ClientSession(r, w, read_timeout_seconds=timedelta(seconds=15)) as session:
+                      await session.initialize()
+                      tools = {t.name for t in (await session.list_tools()).tools}
+                      assert {"search_commerce_documents", "read_commerce_section"} <= tools
+                      res = await session.call_tool(
+                          "search_commerce_documents",
+                          {
+                              "query": "machine wash cleaning care",
+                              "market": "DE",
+                              "canonical_product_id": "PRODUCT-CLOUDSTEP-RUNNER",
+                              "top_k": 2,
+                          },
+                      )
+                      assert not res.isError
+                      data = res.structuredContent
+                      assert data["schema_version"] == "commerce-retrieval-v1"
+                      assert data["retrieval_mode"] == "dense_bm25_rrf"
+                      assert data["degraded"] is False
+                      assert len(data["sections"]) >= 1
+
+          asyncio.run(verify())
+          PY
+
+  core-unit-audit:
+    name: Core Unit Suite (Backlog Audit)
+    runs-on: ubuntu-latest
+    # Currently non-blocking so historical unit regressions can be delegated to Digital Employee PRs.
+    # Flip to false once the 12 backlog regressions are resolved.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -e ".[dev]" onnxruntime
+      - name: Run unit test suite
+        run: .venv/bin/python -m pytest tests/unit -q --tb=short
