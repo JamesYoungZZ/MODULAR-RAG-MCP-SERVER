@@ -18,6 +18,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "pyproject.toml"
       - name: Set up Python 3.12 venv and dependencies
         run: |
           uv venv --python 3.12 .venv
@@ -81,6 +82,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "pyproject.toml"
       - name: Install dependencies
         run: |
           uv venv --python 3.12 .venv
