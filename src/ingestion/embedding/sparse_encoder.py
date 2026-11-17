@@ -158,7 +158,16 @@ class SparseEncoder:
             if re.fullmatch(r'[\s\W]+', token, re.UNICODE):
                 continue
             tokens.append(token)
-        
+
+        # jieba splits hyphenated/underscored compounds into their constituent
+        # tokens, so re-emit the compound surface forms as well to keep the
+        # index-side tokenization aligned with the query-side contract.
+        compound_tokens = re.findall(
+            r'[A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)+',
+            text,
+        )
+        tokens.extend(compound_tokens)
+
         # Apply lowercase if configured
         if self.lowercase:
             tokens = [t.lower() for t in tokens]
