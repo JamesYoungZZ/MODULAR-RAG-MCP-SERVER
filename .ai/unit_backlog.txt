@@ -6,6 +6,7 @@ tests/unit/test_embedding_providers_smoke.py::TestOpenAIEmbedding::test_initiali
 tests/unit/test_embedding_providers_smoke.py::TestAzureEmbedding::test_initialization_with_env_vars
 tests/unit/test_embedding_providers_smoke.py::TestAzureEmbedding::test_initialization_fallback_to_openai_env_var
 tests/unit/test_embedding_providers_smoke.py::TestAzureEmbedding::test_initialization_missing_api_key
+tests/unit/test_list_collections.py::TestExecuteMethod::test_execute_passes_include_stats
 tests/unit/test_protocol_handler.py::TestServerProtocolHandlerIntegration::test_list_tools_returns_registered_tools
 tests/unit/test_sparse_encoder.py::test_tokenize_handles_hyphens_and_underscores
 tests/unit/test_sparse_encoder.py::test_tokenize_handles_numbers
