@@ -71,21 +71,72 @@ jobs:
           asyncio.run(verify())
           PY
 
-  core-unit-audit:
-    name: Core Unit Suite (Backlog Audit)
+  unit-regression-gate:
+    name: Core Unit Regression Gate
     runs-on: ubuntu-latest
-    # Currently non-blocking so historical unit regressions can be delegated to Digital Employee PRs.
-    # Flip to false once the 12 backlog regressions are resolved.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
           cache-dependency-glob: "pyproject.toml"
-      - name: Install dependencies
+      - name: Install dependencies (including PyMuPDF & ONNX)
         run: |
           uv venv --python 3.12 .venv
-          uv pip install --python .venv/bin/python -e ".[dev]" onnxruntime
-      - name: Run unit test suite
-        run: .venv/bin/python -m pytest tests/unit -q --tb=short
+          uv pip install --python .venv/bin/python -e ".[dev]" onnxruntime pymupdf
+      - name: Run full unit suite & verify zero regressions
+        run: |
+          set +e
+          .venv/bin/python -m pytest tests/unit --junitxml=/tmp/unit-report.xml -q --tb=short
+          set -e
+          .venv/bin/python - <<'PY'
+          import subprocess, sys, xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          backlog = {
+              line.strip()
+              for line in Path(".ai/unit_backlog.txt").read_text().splitlines()
+              if line.strip() and not line.strip().startswith("#")
+          }
+          diff_proc = subprocess.run(
+              ["git", "diff", "--name-only", "origin/dev...HEAD"],
+              capture_output=True, text=True, check=False
+          )
+          touched_tests = {
+              f.strip() for f in diff_proc.stdout.splitlines() if f.strip().startswith("tests/")
+          }
+
+          root = ET.parse("/tmp/unit-report.xml").getroot()
+          failed_ids = set()
+          for tc in root.iter("testcase"):
+              if tc.find("failure") is not None or tc.find("error") is not None:
+                  cls = tc.attrib.get("classname", "")
+                  name = tc.attrib.get("name", "")
+                  parts = cls.split(".")
+                  if len(parts) >= 3 and parts[0] == "tests":
+                      # Reconstruct file::Class::test or file::test
+                      fpath = "/".join(parts[:3]) + ".py"
+                      rest = "::".join(parts[3:] + [name])
+                      failed_ids.add(f"{fpath}::{rest}")
+                  else:
+                      failed_ids.add(f"{cls}::{name}")
+
+          new_regressions = failed_ids - backlog
+          touched_failures = {
+              fid for fid in failed_ids if fid.split("::")[0] in touched_tests
+          }
+          resolved = backlog - failed_ids
+
+          print(f"Total current unit failures: {len(failed_ids)} (known backlog: {len(backlog)}, newly resolved in this branch: {len(resolved)})")
+          if resolved:
+              print("Resolved backlog items:", sorted(resolved))
+          if new_regressions:
+              print("❌ BLOCKING: New unit regressions introduced:", sorted(new_regressions))
+              sys.exit(1)
+          if touched_failures:
+              print("❌ BLOCKING: Modified test files still have failures:", sorted(touched_failures))
+              sys.exit(1)
+          print("✅ Zero unit regressions introduced.")
+          PY
