@@ -25,6 +25,7 @@ class CommerceCorpus:
         manifest = json.loads((self.root / "manifest.json").read_text())
         if manifest["tenant_id"] != tenant_id or manifest["schema_version"] != "commerce-documents-v1":
             raise ValueError("corpus_scope_or_version_mismatch")
+        self.manifest = manifest
         self.corpus_version = sha256((self.root / "manifest.json").read_bytes()).hexdigest()
         snapshot_name = manifest.get("catalog_snapshot")
         if snapshot_name:
@@ -85,6 +86,18 @@ class CommerceCorpus:
             if candidate.get("corpus_version") != self.corpus_version:
                 raise ValueError("dense_index_version_mismatch")
             self.vectors = candidate
+
+    def list_collections(self, include_stats=False):
+        collections = [{"name": self.manifest["corpus_id"]}]
+        if include_stats:
+            vector_count = len(self.vectors["vectors"]) if self.vectors is not None else 0
+            collections[0]["stats"] = {
+                "document_count": len(self.manifest["documents"]),
+                "section_count": len(self.records),
+                "vector_count": vector_count,
+            }
+        return {"schema_version": "commerce-collections-v1", "tenant_id": self.tenant_id,
+            "corpus_version": self.corpus_version, "collections": collections}
 
     def allowed(self, record, *, market, product_id):
         now = datetime.now(timezone.utc)
