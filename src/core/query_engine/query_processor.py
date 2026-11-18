@@ -74,7 +74,9 @@ ENGLISH_STOPWORDS: Set[str] = {
 DEFAULT_STOPWORDS: Set[str] = CHINESE_STOPWORDS | ENGLISH_STOPWORDS
 
 # Pattern for filter syntax: key:value
-FILTER_PATTERN: Pattern = re.compile(r'(\w+):([^\s]+)')
+# Negative lookahead prevents URL/protocol forms (e.g., "https://example.com")
+# and path-like values from being misparsed as filter conditions.
+FILTER_PATTERN: Pattern = re.compile(r'(\w+):(?!/)([^\s]+)')
 
 
 @dataclass
