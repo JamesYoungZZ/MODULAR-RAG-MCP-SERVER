@@ -202,6 +202,41 @@ class TestFilterParsing:
         assert "collection" in result.keywords or "docs" in result.keywords
 
 
+class TestUrlFilterHandling:
+    """Test that URLs are not misparsed as filter conditions (SCRUM-7)."""
+
+    def test_https_url_not_parsed_as_filter(self):
+        processor = QueryProcessor()
+        result = processor.process("https://example.com")
+
+        assert result.filters == {}
+        assert "https" in result.keywords
+        assert "example" in result.keywords
+
+    def test_http_url_with_path_not_parsed_as_filter(self):
+        processor = QueryProcessor()
+        result = processor.process("http://foo.com/bar")
+
+        assert result.filters == {}
+        assert len(result.keywords) > 0
+
+    def test_url_in_mixed_query_not_parsed_as_filter(self):
+        processor = QueryProcessor()
+        result = processor.process("请查看 https://example.com/docs 的配置")
+
+        assert result.filters == {}
+        assert "https" in result.keywords
+        assert "example" in result.keywords
+
+    def test_filter_syntax_still_works_alongside_url(self):
+        processor = QueryProcessor()
+        result = processor.process("collection:docs https://example.com")
+
+        assert result.filters.get("collection") == "docs"
+        assert "https" in result.keywords
+        assert "example" in result.keywords
+
+
 class TestEdgeCases:
     """Test edge cases and error handling."""
     
